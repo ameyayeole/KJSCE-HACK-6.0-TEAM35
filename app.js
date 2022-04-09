@@ -62,11 +62,30 @@ newUser.save(function(err){
 
 app.post("/login",function(req,res){
     const email = req.body.email;
-    const password = req.body.password;
-    if(email==="admin@foodkart.com" && password === process.env.ADMINPASSWORD ){
-        res.render("adminPage");
-    }
-    else{
+    const password = md5(req.body.password);
+    const adminEmail = "admin@foodkart.com"
+
+
+    // User.findOne({email:adminEmail},function(err,foundUser){
+    //     if(err){
+    //         res.send(err);
+    //     }
+    //     else{
+    //         if(foundUser){
+    //             if(req.body.password===process.env.ADMINPASSWORD){
+    //                 res.render("adminPage");
+    //             }
+    //             else{
+    //                 res.send("incorrect password");
+    //             }
+    //         }
+    //         else{
+    //             res.send("Unable to find a user with your email");
+    //           }
+    //     }
+    // });
+    
+
     User.findOne({email:email},function(err,foundUser){
         if(err){
             res.send(err);
@@ -85,9 +104,9 @@ app.post("/login",function(req,res){
               }
         }
     });
-}
-});
 
+});
+// }
 
 app.listen("3000",function(req,res){
 console.log("server started with port 3000");

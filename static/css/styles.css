@@ -14,8 +14,8 @@ h1{
   color:white;
 }
 .img{
-  /* height:150px; */
-  width: 175px;
+  height:110px;
+  width: 300px;
 }
 .form-signin {
   width: 100%;
@@ -60,10 +60,23 @@ h1{
   display: flex;
 }
 .card{
+  background: black;
   text-align: center;
   align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.card-body{
+  color: white;
+  text-align: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.card-img-top{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
 }
 
 @media (min-width: 768px) {
@@ -76,7 +89,7 @@ h1{
   --black: #000000;
   --white: #ffffff;
   --redmain: #ff0000;
-  --redlight: #ff000020;
+  --redlight: #ff000010;
 }
 
 .body{
@@ -91,13 +104,18 @@ h1{
 
 .intrologo{
   width:95%;
-  margin-top: 5%;
+  margin-top: 2.5%;
   transition-duration: 0.5s;
 }
 
 .navbar-logo{
   width: 100px;
   margin-left:20px;
+}
+
+.cartLogo{
+  height: 40px;
+  margin-right: 20px;
 }
 
 .intrologo:hover{
@@ -158,7 +176,7 @@ h1{
   font-family: 'Satisfy', cursive;
   font-size: 150%;
   letter-spacing: 3px;
-  color:var(--white);;
+  color:var(--white);
 }
 
 .footertext{
@@ -171,3 +189,18 @@ h1{
   margin: 0%;
   padding: 0%;
 }
+
+/* .top{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.middle{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.bottom{
+  margin-top: 5%;
+  margin-bottom: 5%;
+} */
