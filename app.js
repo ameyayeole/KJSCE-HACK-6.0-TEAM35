@@ -1,4 +1,4 @@
-
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -36,7 +36,9 @@ app.get("/login",function(req,res){
 app.get("/dashboard",function(req,res){
     res.render("dashboard");
 })
-
+app.get("/cart",function(req,res){
+    res.render("cart");
+})
 app.post("/register",function(req,res){
 
 
@@ -60,10 +62,11 @@ newUser.save(function(err){
 
 app.post("/login",function(req,res){
     const email = req.body.email;
-    const password = md5(req.body.password);
-    if(email==="admin@gmail.com" ){
-
+    const password = req.body.password;
+    if(email==="admin@foodkart.com" && password === process.env.ADMINPASSWORD ){
+        res.render("adminPage");
     }
+    else{
     User.findOne({email:email},function(err,foundUser){
         if(err){
             res.send(err);
@@ -81,7 +84,8 @@ app.post("/login",function(req,res){
                 res.send("Unable to find a user with your email");
               }
         }
-    })
+    });
+}
 });
 
 
