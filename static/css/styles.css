@@ -60,13 +60,19 @@ h1{
   display: flex;
 }
 .card{
-  border:var(--redlight);
+  border:var(--redlight) solid 5px;
+  border-radius: 5%;
   background: black;
   text-align: center;
   align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.card:hover{
+  background-color: var(--redlight);
+}
+
 .card-body{
   color: white;
   text-align: center;
@@ -75,15 +81,16 @@ h1{
   margin-bottom: 10px;
 }
 .card-img-top{
-  width: 200px;
-  height: 200px;
+  margin-top:1%;
+  width: 40%; 
   border-radius: 100%;
+  transition-duration: 0.5s;
 }
 
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-  }
+.card-img-top:hover{
+  border-radius: 10%;
+  transform: scale(1.05);
+
 }
 
 :root {
@@ -115,16 +122,6 @@ h1{
   width:95%;
   margin-top: 2.5%;
   transition-duration: 0.5s;
-}
-
-.navbar-logo{
-  width: 100px;
-  margin-left:20px;
-}
-
-.cartLogo{
-  height: 40px;
-  margin-right: 20px;
 }
 
 .intrologo:hover{
@@ -227,7 +224,7 @@ h1{
 .nav-logo{
   margin:0%;
   margin-left: 2%;
-  width: 17.5%;
+  width: 250px;
   height: auto;
 }
 
@@ -235,7 +232,7 @@ h1{
   margin: 0%;
   margin-top:0.25%;
   margin-right: 2%;
-  width: 5%;
+  width: 60px;
   height: auto;
   float: right;
 }
@@ -245,24 +242,75 @@ hr{
   border-top: var(--redmain) solid 3px;
 }
 
-.plate{
-  font-size:5%;
-  float: right;
-}
-
 .button-small{background-color:var(--redlight);
   font-family: 'Roboto', sans-serif;
-  font-size: 250%;
+  font-size: 125%;
   color: var(--white);;
   margin-top: 12.5%;
   margin-bottom:7%;
-  border: 2px solid var(--redmain);
+  border: 1px solid var(--redmain);
+  border-radius: 5px;
   transition-duration: 0.5s;
-  text-decoration: none;
 }
       
 .button-small:hover{background-color: var(--redmain);
         color: var(--white);
         border: var(--black) solid 2px;
         transform: scale(1.025);
+}
+
+.card-title{
+  margin: 0%;
+  font-size: 200%;
+  font-family: 'Roboto', sans-serif;
+  transition-duration: 0.5s;
+}
+
+.card-title:hover{
+  letter-spacing: 2.5%;
+  color: var(--redmain);
+  transform: scale(1.015);
+}
+
+.card-text{
+  margin: 0%;
+  font-size: 125%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.button-final{background-color:var(--redlight);
+  font-family: 'Roboto', sans-serif;
+  font-size: 125%;
+  color: var(--white);;
+  margin-top: 12.5%;
+  margin-bottom:7%;
+  border: 1px solid var(--redmain);
+  border-radius: 5px;
+  transition-duration: 0.5s;
+  padding: 7.5px 15%;
+}
+      
+.button-final:hover{background-color: var(--redmain);
+        color: var(--white);
+        border: var(--black) solid 2px;
+        transform: scale(1.025);
+}
+
+@media (max-width: 900px) {
+  .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+  }
+  .pc{
+    display: none;
+  }
+}
+@media (min-width: 900px) {
+  .mobile{
+    display: none;
+  }
+}
+
+.text-uppercase{
+  margin: 0%;
+  margin-top: 7.5%;
 }

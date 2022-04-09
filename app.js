@@ -4,6 +4,10 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const md5 = require("md5");
+const session = require("express-session");
+const flash = require("express-flash");
+// const MongoDbStore = require("connect-mongo")(session)
+
 
 
 const app = express();
@@ -11,6 +15,20 @@ const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("static"));
 app.set("view engine",'ejs');
+
+// let mongoStore = new MongoDbStore({
+//     mongooseConnection: connection,
+//     collection:"sessions"
+// })
+// app.use(session({
+//     secret: process.env.COOKIESSECRET,
+//     resave:false,
+//     saveUninitialized:false,
+//     cookie:{maxAge: 1000*60*60*24}
+//     }));
+
+//     app.use(flash())
+
 
 mongoose.connect("mongodb://localhost:27017/credentials");
 
@@ -30,6 +48,10 @@ const menuSchema ={
 
 const User = new mongoose.model("user",userSchema); 
 const Menu = mongoose.model("menu",menuSchema);
+
+
+
+
 app.get("/",function(req,res){
     // Menu.find().then(function(menu){
         // console.log(menu);

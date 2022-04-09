@@ -1,0 +1,42 @@
+// [{
+//     "_id": {
+//       "$oid": ""
+//     },
+//     "name": "Bhel Puri",
+//     "image": "bhelpuri.jpg",
+//     "price": "30"
+    
+//   },
+{
+    "_id": {
+      "$oid": ""
+    },
+    "name": "Veg.Biryani",
+    "image": "biryani.jpg",
+    "price": "45"
+   
+  },{
+    "_id": {
+      "$oid": ""
+    },
+    "name": "Bread Pakoda",
+    "image": "breadpakoda",
+    "price": "25"
+    
+  },{
+    "_id": {
+      "$oid": ""
+    },
+    "name": "Chinese Bhel",
+    "image": "chinesebhel.jpg",
+    "price": "40"
+   
+  },{
+    "_id": {
+      "$oid": "4"
+    },
+    "name": "Chinese Choupsey",
+    "image": "chinesechoupsey.jpg",
+    "price": "45"
+   
+  }]
