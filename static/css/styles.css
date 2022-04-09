@@ -60,6 +60,7 @@ h1{
   display: flex;
 }
 .card{
+  border:var(--redlight);
   background: black;
   text-align: center;
   align-items: center;
@@ -88,8 +89,16 @@ h1{
 :root {
   --black: #000000;
   --white: #ffffff;
-  --redmain: #ff0000;
+  --redmain: #FF0000;
   --redlight: #ff000010;
+}
+
+.red{
+  color: var(--redmain);
+}
+
+.bgred{
+  background-color: var(--redmain);
 }
 
 .body{
@@ -190,7 +199,7 @@ h1{
   padding: 0%;
 }
 
-/* .top{
+.top{
   margin-top: 5%;
   margin-bottom: 5%;
 }
@@ -203,4 +212,57 @@ h1{
 .bottom{
   margin-top: 5%;
   margin-bottom: 5%;
-} */
+}
+
+.selectedItems{
+  padding-top: 5%;
+  padding-left: 20%;
+  padding-bottom: 5%;
+  font-family: 'Satisfy', cursive;
+  font-size: 150%;
+  letter-spacing: 3px;
+  color:var(--white);
+}
+
+.nav-logo{
+  margin:0%;
+  margin-left: 2%;
+  width: 17.5%;
+  height: auto;
+}
+
+.cartLogo{
+  margin: 0%;
+  margin-top:0.25%;
+  margin-right: 2%;
+  width: 5%;
+  height: auto;
+  float: right;
+}
+
+hr{
+  margin: 0%;
+  border-top: var(--redmain) solid 3px;
+}
+
+.plate{
+  font-size:5%;
+  float: right;
+}
+
+.button-small{background-color:var(--redlight);
+  font-family: 'Roboto', sans-serif;
+  font-size: 250%;
+  color: var(--white);;
+  margin-top: 12.5%;
+  margin-bottom:7%;
+  border: 2px solid var(--redmain);
+  transition-duration: 0.5s;
+  text-decoration: none;
+}
+      
+.button-small:hover{background-color: var(--redmain);
+        color: var(--white);
+        border: var(--black) solid 2px;
+        transform: scale(1.025);
+}

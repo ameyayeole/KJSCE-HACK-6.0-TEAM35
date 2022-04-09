@@ -5,6 +5,7 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 const md5 = require("md5");
 
+
 const app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -18,11 +19,23 @@ const userSchema = {
     email:String,
     password:String
 }
+// const Schema = mongoose.Schema;
+
+const menuSchema ={
+    name: {type:String, required:true},
+    image: {type:String, required:true},
+    price: {type:Number, required:true},
+    size: {type:String, required:true}
+};
 
 const User = new mongoose.model("user",userSchema); 
-
+const Menu = mongoose.model("menu",menuSchema);
 app.get("/",function(req,res){
-    res.render("home");
+    // Menu.find().then(function(menu){
+        // console.log(menu);
+        res.render("home");
+
+    // })
 });
 
 app.get("/register",function(req,res){
@@ -34,10 +47,18 @@ app.get("/login",function(req,res){
 })
 
 app.get("/dashboard",function(req,res){
-    res.render("dashboard");
+    // res.render("dashboard");
+    Menu.find().then(function(menu){
+        // console.log(menu);
+        res.render("dashboard",{menu:menu});
+
+    })
 })
 app.get("/cart",function(req,res){
     res.render("cart");
+})
+app.get("/adminPage",function(req,res){
+    res.render("adminPage")
 })
 app.post("/register",function(req,res){
 
@@ -53,7 +74,12 @@ newUser.save(function(err){
         res.send(err);
     }
     else{
-        res.render("dashboard")
+        Menu.find().then(function(menu){
+            // console.log(menu);
+            res.render("dashboard",{menu:menu});
+    
+        })
+        // res.render("dashboard")
     }
 });
 
@@ -93,7 +119,12 @@ app.post("/login",function(req,res){
         else{
             if(foundUser){
                 if(foundUser.password===password){
-                    res.render("dashboard");
+                    Menu.find().then(function(menu){
+                        // console.log(menu);
+                        res.render("dashboard",{menu:menu});
+                
+                    })
+                    // res.render("dashboard");
                 }
                 else{
                     res.send("incorrect password");

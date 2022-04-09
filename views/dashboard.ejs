@@ -1,35 +1,34 @@
 <%- include("header") %>
+
+<script src="https://kit.fontawesome.com/e0cb7c9776.js" crossorigin="anonymous"></script>
+
 <body class = "dashboardBody">
-  <nav class="navbar navbar-light">
-    <a class="navbar-brand" href="#">
-      <img class="navbar-logo" src="/data/intrologo.gif" alt="">
-    </a>
-    <img class="cartLogo"src="/data/faviconlogo.png" alt="kart">
-  </nav>
+  <hr>
+  <div>
+      <a class="navbar-brand" href=""><img class="nav-logo" src="images/loginLogo.gif" alt=""></a>
+      <h3 class="plate">PLATE -></h3>
+      <a class="navbar-brand" href="cart"><img class="cartLogo" src="images/cartLogo.png" alt=""></a>
+  </div>
+  <hr>
   <div class = "menu">
     <div class="container-fluid">
       <div class="row">
-          <div class="col-lg-3 col-sm-6">
-            <div class="card">
-              <img class="card-img-top" src="" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">₹200</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
+   <% menu.forEach(function(item){%>
+    
+        <div class="col-lg-3 col-sm-6">
+          <div class="card">
+            <img class="card-img-top" src="images\foodimages\menu\<%=item.image%>">
+            <div class="card-body">
+              <h5 class="card-title"><%=item.name%></h5>
+              <p class="card-text">₹ <%=item.price%></p>
+              <a href="#" class="button-small red">Add to plate</a>
             </div>
           </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="card">
-              <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">₹200</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
+        </div>
+    <%})%>
+         
+        
+          <!-- <div class="col-lg-3 col-sm-6">
             <div class="card">
               <img class="card-img-top" src="..." alt="Card image cap">
               <div class="card-body">
@@ -49,9 +48,17 @@
               </div>
             </div>
           </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">₹200</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div> -->
       </div>
   </div>
   </div>
 </body>
-
-<%- include("footer") %>

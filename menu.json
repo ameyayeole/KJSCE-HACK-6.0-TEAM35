@@ -2,64 +2,64 @@
   "_id": {
     "$oid": "5eee651f739f8c674fd736ee"
   },
-  "name": "tea",
-  "image": "tea.png",
+  "name": "Tea",
+  "image": "tea.jpg",
   "price": "7",
   "size": "small"
 },{
   "_id": {
     "$oid": "5eee6671a27a66807cf2bea3"
   },
-  "name": "coffee",
-  "image": "coffee.png",
+  "name": "Coffee",
+  "image": "cofee.jpg",
   "price": "16",
   "size": "medium"
 },{
   "_id": {
     "$oid": "5eee6692a27a66807cf2bea4"
   },
-  "name": "hot milk",
-  "image": "hotmilk.png",
+  "name": "Hot milk",
+  "image": "hotmilk.jpg",
   "price": "25",
   "size": "small"
 },{
   "_id": {
     "$oid": "5eee66a5a27a66807cf2bea5"
   },
-  "name": "samosa",
-  "image": "samosa.png",
+  "name": "Samosa",
+  "image": "samosa.jpg",
   "price": "13",
   "size": "large"
 },{
   "_id": {
     "$oid": "5eee66c4a27a66807cf2bea6"
   },
-  "name": "vada pav",
-  "image": "vadapav.png",
+  "name": "Vada Pav",
+  "image": "vadapav.jpg",
   "price": "15",
   "size": "medium"
 },{
   "_id": {
     "$oid": "5eee66cfa27a66807cf2bea7"
   },
-  "name": "misal pav",
-  "image": "misalpav",
+  "name": "Misal Pav",
+  "image": "misalpav.jpg",
   "price": "40",
   "size": "small"
 },{
   "_id": {
     "$oid": "5eee66eea27a66807cf2bea8"
   },
-  "name": "bread pakoda",
-  "image": "breadpakoda.png",
+  "name": "Bread Pakoda",
+  "image": "breadpakoda.jpg",
   "price": "29",
   "size": "large"
 },{
   "_id": {
     "$oid": "5eee6717a27a66807cf2bea9"
   },
-  "name": "idli",
-  "image": "idli.png",
+  "name": "Idli",
+  "image": "idli.jpg",
   "price": "30",
   "size": "medium"
 }]
