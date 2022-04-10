@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const md5 = require("md5");
 const session = require("express-session");
 const flash = require("express-flash");
-// const MongoDbStore = require("connect-mongo")(session)
+// const MongoStore = require("connect-mongo")(session);
 
 
 
@@ -16,18 +16,20 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("static"));
 app.set("view engine",'ejs');
 
-// let mongoStore = new MongoDbStore({
-//     mongooseConnection: connection,
-//     collection:"sessions"
-// })
+// let store = new MongoStore({
+//     host: url,
+//     // collection: "sessions"
+//  });
+
 // app.use(session({
 //     secret: process.env.COOKIESSECRET,
 //     resave:false,
 //     saveUninitialized:false,
+//     store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/credentials"},
 //     cookie:{maxAge: 1000*60*60*24}
 //     }));
 
-//     app.use(flash())
+    // app.use(flash())
 
 
 mongoose.connect("mongodb://localhost:27017/credentials");
@@ -80,7 +82,25 @@ app.get("/cart",function(req,res){
     res.render("cart");
 })
 app.get("/adminPage",function(req,res){
-    res.render("adminPage")
+   
+    User.findOne({email:adminEmail},function(err,foundUser){
+        if(err){
+            res.send(err);
+        }
+        else{
+            if(foundUser){
+                if(req.body.password===process.env.ADMINPASSWORD){
+                    res.render("adminPage");
+                }
+                else{
+                    res.send("incorrect password");
+                }
+            }
+            else{
+                res.send("Unable to find a user with your email");
+              }
+        }
+    });
 })
 app.post("/register",function(req,res){
 
@@ -98,7 +118,7 @@ newUser.save(function(err){
     else{
         Menu.find().then(function(menu){
             // console.log(menu);
-            res.render("dashboard",{menu:menu});
+            res.render("login");
     
         })
         // res.render("dashboard")
@@ -111,27 +131,9 @@ newUser.save(function(err){
 app.post("/login",function(req,res){
     const email = req.body.email;
     const password = md5(req.body.password);
-    const adminEmail = "admin@foodkart.com"
+    
 
 
-    // User.findOne({email:adminEmail},function(err,foundUser){
-    //     if(err){
-    //         res.send(err);
-    //     }
-    //     else{
-    //         if(foundUser){
-    //             if(req.body.password===process.env.ADMINPASSWORD){
-    //                 res.render("adminPage");
-    //             }
-    //             else{
-    //                 res.send("incorrect password");
-    //             }
-    //         }
-    //         else{
-    //             res.send("Unable to find a user with your email");
-    //           }
-    //     }
-    // });
     
 
     User.findOne({email:email},function(err,foundUser){

@@ -98,6 +98,7 @@ h1{
   --white: #ffffff;
   --redmain: #FF0000;
   --redlight: #ff000010;
+  --green: #00FF00;
 }
 
 .red{
@@ -259,6 +260,12 @@ hr{
         transform: scale(1.025);
 }
 
+.button-small:focus{background-color: var(--green);
+  color: var(--black);
+  border: var(--black) solid 2px;
+  transform: scale(1.025);
+}
+
 .card-title{
   margin: 0%;
   font-size: 200%;
@@ -282,18 +289,47 @@ hr{
   font-family: 'Roboto', sans-serif;
   font-size: 125%;
   color: var(--white);;
-  margin-top: 12.5%;
-  margin-bottom:7%;
+  margin-top: 10%;
   border: 1px solid var(--redmain);
   border-radius: 5px;
   transition-duration: 0.5s;
-  padding: 7.5px 15%;
+  padding: 7.5px 27.5%;
 }
       
 .button-final:hover{background-color: var(--redmain);
         color: var(--white);
         border: var(--black) solid 2px;
         transform: scale(1.025);
+}
+
+.button-main{background-color:var(--redlight);
+  font-family: 'Roboto', sans-serif;
+  font-size: 125%;
+  color: var(--white);;
+  margin-top: 10%;
+  border: 1px solid var(--redmain);
+  border-radius: 5px;
+  transition-duration: 0.5s;
+  padding: 7.5px 20%;
+}
+      
+.button-main:hover{
+        background-color: var(--redmain);
+        color: var(--white);
+        border: var(--black) solid 2px;
+        transform: scale(1.025);
+}
+
+.button-main:hover{background-color: var(--redmain);
+  color: var(--white);
+  border: var(--black) solid 2px;
+  transform: scale(1.025);
+}
+
+.button-main:focus{background-color: var(--green);
+  color: var(--black);
+  border: var(--black) solid 2px;
+  transform: scale(1.025);
 }
 
 @media (max-width: 900px) {
@@ -313,4 +349,43 @@ hr{
 .text-uppercase{
   margin: 0%;
   margin-top: 7.5%;
+}
+
+.text-muted{
+  font-size: 125%;
+  font-family: 'Roboto', sans-serif;
+  opacity: 1;
+  color: var(--white);
+  transition-duration: 0.5s;
+}
+
+.text-muted:hover{
+  letter-spacing: 2.5%;
+  color: var(--redmain);
+  transform: scale(1.015);
+}
+
+.yourplate{
+  margin: 0%;
+  padding: 0%;
+  font-size: 150%;
+}
+
+.order{
+  margin: 0%;
+  padding: 0%;
+  font-size: 150%;
+}
+
+.form-control{
+  width: 100%;
+}
+
+.img-fluid{
+  margin-top: 15%;
+  margin-bottom: 0%;
+}
+
+.fw-bold{
+  font-size: 150%;
 }

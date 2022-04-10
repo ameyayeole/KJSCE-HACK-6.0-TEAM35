@@ -1,13 +1,4 @@
-// [{
-//     "_id": {
-//       "$oid": ""
-//     },
-//     "name": "Bhel Puri",
-//     "image": "bhelpuri.jpg",
-//     "price": "30"
-    
-//   },
-{
+[{
     "_id": {
       "$oid": ""
     },
